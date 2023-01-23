@@ -13,7 +13,7 @@ d3.json(queryUrl).then(data => {
     // Give each feature a popup that describes the place and time of the earthquake.
     function onEachFeature(feature, layer) {
       layer.bindPopup("Place: " + feature.properties.place + "<br>Time: " + feature.properties.time + 
-            "<br> Magnitude: " + feature.properties.mag + "<br> Deth (per km): " + feature.geometry.coordinates[2]);
+            "<br> Magnitude: " + feature.properties.mag + "<br> Depth (per km): " + feature.geometry.coordinates[2]);
     }
   
     // Circle size by magnitude
@@ -25,7 +25,7 @@ d3.json(queryUrl).then(data => {
     function circleColor(depth) {
         // Create a color scale for the depth
         var colorScale = d3.scaleLinear()
-                            .range(['limeGreen', 'red'])
+                            .range(['#00FF00', 'red'])
                             .domain([-10, 90]);
   
         return colorScale(depth);
@@ -99,7 +99,7 @@ d3.json(queryUrl).then(data => {
 
            // Create a color scale for the legend.
         var colorScale = d3.scaleLinear()
-                          .range(['limeGreen', 'red'])
+                          .range(['#00FF00', 'red'])
                           .domain([-10, 90]);
 
     for (var i = 0; i < depthSegments.length; i++) {
