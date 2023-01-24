@@ -25,7 +25,7 @@ d3.json(queryUrl).then(data => {
     function circleColor(depth) {
         // Create a color scale for the depth
         var colorScale = d3.scaleLinear()
-                            .range(['#00FF00', 'red'])
+                            .range(['#00FF00', '#880808'])
                             .domain([-10, 90]);
   
         return colorScale(depth);
@@ -99,7 +99,7 @@ d3.json(queryUrl).then(data => {
 
            // Create a color scale for the legend.
         var colorScale = d3.scaleLinear()
-                          .range(['#00FF00', 'red'])
+                          .range(['#00FF00', '#880808'])
                           .domain([-10, 90]);
 
     for (var i = 0; i < depthSegments.length; i++) {
